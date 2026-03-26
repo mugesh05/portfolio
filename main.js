@@ -122,3 +122,24 @@ document.getElementById('cf').addEventListener('submit', function(e){
   setTimeout(function(){ btn.textContent = 'Send Message'; }, 3000);
 });
 
+/* ━━━━━ CERTIFICATE MODAL ━━━━━ */
+function toggleImage(imgSrc) {
+  var modal = document.getElementById('certModal');
+  var modalImg = document.getElementById('modalImg');
+  modalImg.src = imgSrc;
+  modal.style.display = 'block';
+}
+
+function closeModal() {
+  var modal = document.getElementById('certModal');
+  modal.style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  var modal = document.getElementById('certModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+

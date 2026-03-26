@@ -511,7 +511,7 @@
           <div class="cbar">
             <div class="cbar-fill" style="background:linear-gradient(90deg,#e03535,rgba(224,53,53,.3))"></div>
           </div>
-          <a href="#" class="cbtn">View Certificate →</a>
+          <a href="#" class="cbtn" onclick="toggleImage('/certificates/full-stack-developer.png'); return false;">View Certificate →</a>
         </div>
       </div>
       <div class="ccard reveal d1">
@@ -528,7 +528,7 @@
           <div class="cbar">
             <div class="cbar-fill" style="background:linear-gradient(90deg,#3776ab,rgba(55,118,171,.3))"></div>
           </div>
-          <a href="#" class="cbtn">View Certificate →</a>
+          <a href="#" class="cbtn" onclick="toggleImage('/certificates/Excel.png'); return false;">View Certificate →</a>
         </div>
       </div>
       <div class="ccard reveal d2">
@@ -545,7 +545,7 @@
           <div class="cbar">
             <div class="cbar-fill" style="background:linear-gradient(90deg,#0077B5,rgba(0,119,181,.3))"></div>
           </div>
-          <a href="#" class="cbtn">View Certificate →</a>
+          <a href="#" class="cbtn" onclick="toggleImage('/certificates/Excel-formula.png'); return false;">View Certificate →</a>
         </div>
       </div>
       <div class="ccard reveal d3">
@@ -562,7 +562,7 @@
           <div class="cbar">
             <div class="cbar-fill" style="background:linear-gradient(90deg,#2A73CC,rgba(42,115,204,.3))"></div>
           </div>
-          <a href="#" class="cbtn">View Certificate →</a>
+          <a href="#" class="cbtn" onclick="toggleImage('/certificates/Excel.png'); return false;">View Certificate →</a>
         </div>
       </div>
     </div>
@@ -683,6 +683,15 @@
     </div>
     <p>Built with <span>♥</span> in Tiruchirappalli</p>
   </footer>
+
+  <!-- Modal for Certificates -->
+  <div id="certModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img id="modalImg" src="" alt="Certificate">
+    </div>
+  </div>
+
   <script src="main.js"></script>
 </body>
 
