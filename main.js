@@ -120,9 +120,11 @@ document.getElementById('cf').addEventListener('submit', e => {
 
 // ━━━ MAGNETIC BTNS ━━━
 document.querySelectorAll('.btn-p,.hire').forEach(btn => {
+  
   btn.addEventListener('mousemove', e => {
     const r = btn.getBoundingClientRect();
     btn.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .18}px,${(e.clientY - r.top - r.height / 2) * .18}px)`;
   }, { passive: true });
   btn.addEventListener('mouseleave', () => btn.style.transform = '');
 });
+
