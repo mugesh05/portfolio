@@ -25,7 +25,6 @@
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" aria-hidden="true"></div>
 <div class="intro" aria-hidden="true"><span>Mugesh</span></div>
-<div class="cursor" aria-hidden="true"><i class="cursor__dot"></i><i class="cursor__ring"><b></b></i></div>
 
 <header class="header" id="header">
   <a class="logo" href="#top" aria-label="Mugesh, back to top">Mugesh<span>.</span></a>
@@ -42,17 +41,17 @@
 <main id="main">
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="mock" aria-hidden="true">
-      <div class="mock__bar"><i></i><i></i><i></i></div>
-      <div class="mock__body">
-        <span class="mock__nav"></span>
-        <span class="mock__h"></span><span class="mock__h mock__h--s"></span>
-        <span class="mock__p"></span><span class="mock__p mock__p--s"></span>
-        <span class="mock__btn"></span>
-        <div class="mock__img"></div>
-        <div class="mock__row"><b></b><b></b><b></b></div>
+    <div class="hero-card" aria-hidden="true">
+      <div class="hero-card__body" id="heroCardBody">
+        <div class="hero-card__face">
+          <img id="heroCardImg" src="https://cdn.corenexis.com/f/TsX2UxBW.jpeg" width="1342" height="575" alt="">
+          <p class="hero-card__caption" id="heroCardCaption">LUXORA</p>
+        </div>
+        <div class="hero-card__edge" style="--z:-4px"></div>
+        <div class="hero-card__edge" style="--z:-8px"></div>
+        <div class="hero-card__edge" style="--z:-12px"></div>
+        <div class="hero-card__edge" style="--z:-16px"></div>
       </div>
-      <div class="mock__chip"><span class="dot"></span>Responsive</div>
     </div>
 
     <div class="hero__inner">
@@ -84,11 +83,11 @@
   <section class="section work" id="work" aria-labelledby="work-title">
     <div class="wrap">
       <h2 class="big reveal" id="work-title">Selected work</h2>
-      <p class="section__intro reveal">Three live products I designed and built from scratch. Open any of them and click around.</p>
+      <p class="section__intro reveal">Five live projects I designed and built. Open any of them and click around.</p>
 
       <div class="projects">
         <article class="project reveal" style="--i:0">
-          <a class="project__link" href="https://noira-lynx-b0461.web.app/" target="_blank" rel="noopener" data-cursor="Visit" aria-label="Open NoiraLynx, a luxury fragrance marketplace (new tab)">
+          <a class="project__link" href="https://noira-lynx-b0461.web.app/" target="_blank" rel="noopener" aria-label="Open NoiraLynx, a luxury fragrance marketplace (new tab)">
             <div class="frame">
               <div class="frame__bar"><i></i><i></i><i></i><span>noira-lynx-b0461.web.app</span></div>
               <div class="shot" data-name="NoiraLynx" data-parallax="0.05"><img src="https://image.thum.io/get/width/1400/crop/875/noanimate/https://noira-lynx-b0461.web.app/" width="1400" height="875" loading="lazy" alt="Screenshot of the NoiraLynx luxury fragrance marketplace homepage"></div>
@@ -105,26 +104,8 @@
           </a>
         </article>
 
-        <article class="project reveal" style="--i:1">
-          <a class="project__link" href="https://ai-interview-platform-eight-sigma.vercel.app/" target="_blank" rel="noopener" data-cursor="Visit" aria-label="Open Rehearsal, an AI mock interview platform (new tab)">
-            <div class="frame">
-              <div class="frame__bar"><i></i><i></i><i></i><span>ai-interview-platform.vercel.app</span></div>
-              <div class="shot" data-name="Rehearsal" data-parallax="0.05"><img src="https://image.thum.io/get/width/1400/crop/875/noanimate/https://ai-interview-platform-eight-sigma.vercel.app/" width="1400" height="875" loading="lazy" alt="Screenshot of the Rehearsal AI mock interview platform"></div>
-            </div>
-            <div class="project__info">
-              <div>
-                <h3>Rehearsal</h3>
-                <p class="project__type">AI Mock Interview Platform</p>
-              </div>
-              <p class="project__desc">An interview practice platform with real-time feedback, role-specific question generation and performance analytics.</p>
-              <ul class="tags"><li>React JS</li><li>Node JS</li><li>OpenAI API</li><li>Tailwind CSS</li></ul>
-              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-            </div>
-          </a>
-        </article>
-
         <article class="project reveal" style="--i:2">
-          <a class="project__link" href="https://auto-market-cars.vercel.app/" target="_blank" rel="noopener" data-cursor="Visit" aria-label="Open AutoMarket Pro, an automotive showroom (new tab)">
+          <a class="project__link" href="https://auto-market-cars.vercel.app/" target="_blank" rel="noopener" aria-label="Open AutoMarket Pro, an automotive showroom (new tab)">
             <div class="frame">
               <div class="frame__bar"><i></i><i></i><i></i><span>auto-market-cars.vercel.app</span></div>
               <div class="shot" data-name="AutoMarket Pro" data-parallax="0.05"><img src="https://image.thum.io/get/width/1400/crop/875/noanimate/https://auto-market-cars.vercel.app/" width="1400" height="875" loading="lazy" alt="Screenshot of the AutoMarket Pro automotive showroom"></div>
@@ -136,6 +117,60 @@
               </div>
               <p class="project__desc">A modern car marketplace with advanced search filters, detailed vehicle listings and price comparison for buyers and sellers.</p>
               <ul class="tags"><li>React JS</li><li>Next JS</li><li>MongoDB</li><li>Tailwind CSS</li></ul>
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="project reveal" style="--i:0">
+          <a class="project__link" href="https://bugatti-jacob.onrender.com/" target="_blank" rel="noopener" aria-label="Open Engineering Beyond Time, a Bugatti × Jacob &amp; Co. inspired concept (new tab)">
+            <div class="frame">
+              <div class="frame__bar"><i></i><i></i><i></i><span>bugatti-jacob.onrender.com</span></div>
+              <div class="shot" data-name="Engineering Beyond Time" data-parallax="0.05"><img src="https://cdn.corenexis.com/f/SaK9veOt.jpeg" width="1348" height="591" loading="lazy" alt="Hero of the Engineering Beyond Time concept website with a blue Bugatti-inspired luxury watch"></div>
+            </div>
+            <div class="project__info">
+              <div>
+                <h3>Engineering Beyond Time</h3>
+                <p class="project__type">Bugatti × Jacob &amp; Co. Inspired Concept</p>
+              </div>
+              <p class="project__desc">A cinematic concept site for a Bugatti-inspired luxury timepiece, with elegant serif headlines, a glass navigation bar and a dark, premium atmosphere.</p>
+              <ul class="tags"><li>Concept Project</li><li>Landing Page</li><li>Responsive</li></ul>
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="project reveal" style="--i:0">
+          <a class="project__link" href="https://bedroomreview.vercel.app/" target="_blank" rel="noopener" aria-label="Open LUXORA, a luxury interior design website (new tab)">
+            <div class="frame">
+              <div class="frame__bar"><i></i><i></i><i></i><span>bedroomreview.vercel.app</span></div>
+              <div class="shot" data-name="LUXORA" data-parallax="0.05"><img src="https://cdn.corenexis.com/f/TsX2UxBW.jpeg" width="1342" height="575" loading="lazy" alt="Hero of the LUXORA luxury interior design website showing a bright, modern living room"></div>
+            </div>
+            <div class="project__info">
+              <div>
+                <h3>LUXORA</h3>
+                <p class="project__type">Luxury Interior Design</p>
+              </div>
+              <p class="project__desc">A refined website for an interior design studio, with full-screen room photography, elegant typography and clear calls to action to take a tour or request a quote.</p>
+              <ul class="tags"><li>Business Website</li><li>Landing Page</li><li>Responsive</li></ul>
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="project reveal" style="--i:0">
+          <a class="project__link" href="https://transcriptionapp-h9rh.onrender.com/" target="_blank" rel="noopener" aria-label="Open TranscribeAI, a Tamil audio transcription studio (new tab)">
+            <div class="frame">
+              <div class="frame__bar"><i></i><i></i><i></i><span>transcriptionapp-h9rh.onrender.com</span></div>
+              <div class="shot" data-name="TranscribeAI" data-parallax="0.05"><img src="https://cdn.corenexis.com/f/H6tv0MFJ.jpeg" width="1329" height="682" loading="lazy" alt="TranscribeAI web app with an audio upload area and a Tamil transcription panel"></div>
+            </div>
+            <div class="project__info">
+              <div>
+                <h3>TranscribeAI</h3>
+                <p class="project__type">Tamil Audio Transcription Studio</p>
+              </div>
+              <p class="project__desc">A web app that turns Tamil audio into timestamped text with speaker labels, keyword search and a summary, then exports to TXT, Word, SRT subtitles or JSON.</p>
+              <ul class="tags"><li>Web App</li><li>AssemblyAI</li><li>Tamil Language</li></ul>
               <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
           </a>
@@ -191,9 +226,11 @@
         <li class="reveal" style="--i:3"><span class="skills__name">Responsive Web Design</span><span class="skills__note">Built mobile-first so it looks right everywhere</span></li>
         <li class="reveal" style="--i:4"><span class="skills__name">UI/UX</span><span class="skills__note">Prototyped in Figma before a line of code</span></li>
         <li class="reveal" style="--i:5"><span class="skills__name">Creative Development</span><span class="skills__note">Details that make a brand memorable</span></li>
+        <li class="reveal" style="--i:6"><span class="skills__name">React JS</span><span class="skills__note">Component-based interfaces for web apps and dashboards</span></li>
+        <li class="reveal" style="--i:7"><span class="skills__name">Node JS</span><span class="skills__note">APIs and back-end logic when a project needs more than a front end</span></li>
       </ul>
 
-      <p class="about__meta reveal">B.Sc. Computer Science, Bishop Heber College. I also build full-stack apps with React, Node JS, MongoDB and Firebase when a project needs a backend.</p>
+      <p class="about__meta reveal">B.Sc. Computer Science, Bishop Heber College. When a project needs more than a website, I build full-stack apps with React JS, Node JS, MongoDB and Firebase.</p>
     </div>
   </section>
 
@@ -204,11 +241,10 @@
 
       <div class="contact__grid">
         <ul class="links reveal">
-          <li><a href="mailto:mksmugesh269@gmail.com" data-cursor="Email"><span>Email</span><em>mksmugesh269@gmail.com</em></a></li>
-          <li><a href="https://wa.me/917708858849?text=Hi%20Mugesh%2C%20I%27d%20like%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener" data-cursor="Chat"><span>WhatsApp</span><em>+91 77088 58849</em></a></li>
-          <li><a href="https://github.com/mugesh05" target="_blank" rel="noopener" data-cursor="Open"><span>GitHub</span><em>github.com/mugesh05</em></a></li>
-          <!-- Replace with your own LinkedIn profile URL -->
-          <li><a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener" data-cursor="Open"><span>LinkedIn</span><em>Connect with me</em></a></li>
+          <li><a href="mailto:mksmugesh269@gmail.com"><span>Email</span><em>mksmugesh269@gmail.com</em></a></li>
+          <li><a href="https://wa.me/917708858849?text=Hi%20Mugesh%2C%20I%27d%20like%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener"><span>WhatsApp</span><em>+91 77088 58849</em></a></li>
+          <li><a href="https://github.com/mugesh05" target="_blank" rel="noopener"><span>GitHub</span><em>github.com/mugesh05</em></a></li>
+          <li><a href="https://www.linkedin.com/in/mugesh05" target="_blank" rel="noopener"><span>LinkedIn</span><em>mugesh05</em></a></li>
         </ul>
 
         <form class="form reveal" id="enquiry" novalidate>
