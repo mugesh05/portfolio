@@ -139,47 +139,6 @@
 
   /* ---------- Desktop-only interactions ---------- */
   if (fine && !reduce) {
-    // Custom cursor
-    const cursor = $('.cursor');
-    const dot = $('.cursor__dot');
-    const ring = $('.cursor__ring');
-    const label = $('b', ring);
-    body.classList.add('has-cursor');
-    cursor.classList.add('is-hidden');
-    let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
-    addEventListener('pointermove', (e) => {
-      mx = e.clientX; my = e.clientY;
-      cursor.classList.remove('is-hidden');
-    }, { passive: true });
-    document.addEventListener('pointerleave', () => cursor.classList.add('is-hidden'));
-    const loop = () => {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      dot.style.transform = `translate3d(${mx}px,${my}px,0)`;
-      ring.style.transform = `translate3d(${rx}px,${ry}px,0)`;
-      requestAnimationFrame(loop);
-    };
-    loop();
-    document.addEventListener('pointerover', (e) => {
-      const labelled = e.target.closest('[data-cursor]');
-      const clickable = e.target.closest('a,button,select,input,textarea');
-      cursor.classList.toggle('is-link', !!labelled);
-      cursor.classList.toggle('is-small', !labelled && !!clickable);
-      label.textContent = labelled ? labelled.dataset.cursor : '';
-    });
-
-    // Magnetic buttons
-    $$('[data-magnetic]').forEach((el) => {
-      const strength = 0.3;
-      el.addEventListener('pointermove', (e) => {
-        const r = el.getBoundingClientRect();
-        const x = (e.clientX - (r.left + r.width / 2)) * strength;
-        const y = (e.clientY - (r.top + r.height / 2)) * strength;
-        el.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0)`;
-      });
-      el.addEventListener('pointerleave', () => { el.style.transform = ''; });
-    });
-
     // Spotlight on service cards
     $$('.card').forEach((card) => {
       card.addEventListener('pointermove', (e) => {
@@ -188,6 +147,46 @@
         card.style.setProperty('--my', e.clientY - r.top + 'px');
       });
     });
+  }
+
+  /* ---------- Hero card: project slideshow + gentle 3D tilt ---------- */
+  const cardBody = $('#heroCardBody');
+  const cardImg = $('#heroCardImg');
+  const cardCap = $('#heroCardCaption');
+  if (cardBody && cardImg && cardCap) {
+    const CL = 'https://res.cloudinary.com/dtz0urit6/image/upload/q_auto:best,f_jpg/cloudinary-tools-uploads/';
+    const slides = [
+      { src: 'https://cdn.corenexis.com/f/TsX2UxBW.jpeg', label: 'LUXORA' },
+      { src: 'https://cdn.corenexis.com/f/SaK9veOt.jpeg', label: 'Engineering Beyond Time' },
+      { src: 'https://image.thum.io/get/width/1400/crop/875/noanimate/https://noira-lynx-b0461.web.app/', label: 'NoiraLynx' },
+      { src: 'https://image.thum.io/get/width/1400/crop/875/noanimate/https://auto-market-cars.vercel.app/', label: 'AutoMarket Pro' },
+      { src: 'https://cdn.corenexis.com/f/H6tv0MFJ.jpeg', label: 'TranscribeAI' }
+    ];
+    let current = 0;
+    const show = (n) => {
+      const next = new Image();           // load first, then fade, so there is never a blank card
+      next.onload = () => {
+        cardImg.classList.add('is-fading');
+        setTimeout(() => {
+          cardImg.src = next.src;
+          cardCap.textContent = slides[n].label;
+          current = n;
+          cardImg.classList.remove('is-fading');
+        }, 500);
+      };
+      next.onerror = () => { current = n; }; // skip a broken image on the next tick
+      next.src = slides[n].src;
+    };
+    if (!reduce) setInterval(() => { if (!document.hidden) show((current + 1) % slides.length); }, 4000);
+
+    if (fine && !reduce) {
+      addEventListener('pointermove', (e) => {
+        const x = (innerWidth / 2 - e.clientX) / 60;
+        const y = (innerHeight / 2 - e.clientY) / 60;
+        cardBody.style.transform = `rotateX(${(10 + y).toFixed(1)}deg) rotateY(${(-10 - x).toFixed(1)}deg)`;
+      }, { passive: true });
+      document.addEventListener('pointerleave', () => { cardBody.style.transform = ''; });
+    }
   }
 
   /* ---------- Project enquiry form (opens email or WhatsApp, no backend needed) ---------- */
